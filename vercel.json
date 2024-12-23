@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/docs",
+      "destination": "https://docs.promtlab.io.mintlify.dev/docs"
+    },
+    {
+      "source": "/docs/:match*",
+      "destination": "https://docs.promtlab.io.mintlify.dev/docs/:match*"
+    }
+  ]
+}

@@ -75,11 +75,12 @@
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Proxy Services",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/post"
+        "api-reference/endpoint/smart-routing",
+        "api-reference/endpoint/openai-proxy", 
+        "api-reference/endpoint/anthropic-proxy",
+        "api-reference/endpoint/health"
       ]
     }
   ],

@@ -1,33 +1,18 @@
 ---
 title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+description: 'Welcome to PromptLab API documentation'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+<img src="/api/placeholder/800/400" alt="Hero Light" className="block dark:hidden" />
+<img src="/api/placeholder/800/400" alt="Hero Dark" className="hidden dark:block" />
 
-## Welcome
+## Getting Started
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
-
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
-
-## Authentication
-
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
-
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+<CardGroup cols={2}>
+  <Card title="Authentication" icon="key">
+    Generate your API keys and authenticate requests
+  </Card>
+  <Card title="Proxy Services" icon="bolt">
+    Start making requests through our proxy
+  </Card>
+</CardGroup>

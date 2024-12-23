@@ -1,25 +1,31 @@
 # Proxy Services
+
 Welcome to PromptLab's proxy documentation.
 
-<img src="/api/placeholder/800/400" alt="Hero Light" className="block dark:hidden" />
-<img src="/api/placeholder/800/400" alt="Hero Dark" className="hidden dark:block" />
+<img alt="Hero Light" classname="block dark:hidden" src="/images/2.png" />
+
+<img alt="Hero Dark" classname="hidden dark:block" src="/images/3.png" />
 
 <CardGroup cols={2}>
   <Card title="Smart Routing" icon="bolt" href="#smart-routing">
     Auto-route between providers efficiently
   </Card>
+
   <Card title="OpenAI Proxy" icon="square-code" href="#openai-compatible">
     Drop-in replacement for OpenAI
   </Card>
+
   <Card title="Anthropic Proxy" icon="message" href="#anthropic-compatible">
     Direct Anthropic API compatibility
   </Card>
+
   <Card title="Health Checks" icon="heart-pulse" href="#health-check">
     Monitor service status
   </Card>
 </CardGroup>
 
 ## Smart Routing
+
 `POST /v1/smart/chat/completions`
 
 ```javascript
@@ -40,6 +46,7 @@ fetch('https://api.promptlab.ai/v1/smart/chat/completions', {
 ```
 
 ## OpenAI Compatible
+
 `POST /v1/chat/completions`
 
 ```javascript
@@ -59,7 +66,8 @@ fetch('https://api.promptlab.ai/v1/chat/completions', {
 })
 ```
 
-## Anthropic Compatible  
+## Anthropic Compatible
+
 `POST /v1/messages`
 
 ```javascript
@@ -80,6 +88,7 @@ fetch('https://api.promptlab.ai/v1/messages', {
 ```
 
 ## Health Check
+
 `GET /health`
 
 ```javascript

@@ -1,71 +1,91 @@
----
-title: Introduction
-description: 'Welcome to the home of your new documentation'
----
+# Proxy Services
+Welcome to PromptLab's proxy documentation.
 
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.svg"
-  alt="Hero Dark"
-/>
-
-## Setting up
-
-The first step to world-class documentation is setting up your editing environments.
+<img src="/api/placeholder/800/400" alt="Hero Light" className="block dark:hidden" />
+<img src="/api/placeholder/800/400" alt="Hero Dark" className="hidden dark:block" />
 
 <CardGroup cols={2}>
-  <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
+  <Card title="Smart Routing" icon="bolt" href="#smart-routing">
+    Auto-route between providers efficiently
   </Card>
-  <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
+  <Card title="OpenAI Proxy" icon="square-code" href="#openai-compatible">
+    Drop-in replacement for OpenAI
+  </Card>
+  <Card title="Anthropic Proxy" icon="message" href="#anthropic-compatible">
+    Direct Anthropic API compatibility
+  </Card>
+  <Card title="Health Checks" icon="heart-pulse" href="#health-check">
+    Monitor service status
   </Card>
 </CardGroup>
 
-## Make it yours
+## Smart Routing
+`POST /v1/smart/chat/completions`
 
-Update your docs to your brand and add valuable content for the best user conversion.
+```javascript
+fetch('https://api.promptlab.ai/v1/smart/chat/completions', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    model: 'gpt-4',
+    messages: [{ role: 'user', content: 'Hello!' }],
+    client: {
+      user: 'user-123' // Optional: Track individual end users
+    }
+  })
+})
+```
 
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
-  </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
-  </Card>
-</CardGroup>
+## OpenAI Compatible
+`POST /v1/chat/completions`
+
+```javascript
+fetch('https://api.promptlab.ai/v1/chat/completions', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    model: 'gpt-4',
+    messages: [{ role: 'user', content: 'Hello!' }],
+    client: {
+      user: 'user-123' // Optional: Track individual end users
+    }
+  })
+})
+```
+
+## Anthropic Compatible  
+`POST /v1/messages`
+
+```javascript
+fetch('https://api.promptlab.ai/v1/messages', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    model: 'claude-3-opus-20240229',
+    messages: [{ role: 'user', content: 'Hello!' }],
+    client: {
+      user: 'user-123' // Optional: Track individual end users
+    }
+  })
+})
+```
+
+## Health Check
+`GET /health`
+
+```javascript
+fetch('https://api.promptlab.ai/health', {
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY'
+  }
+})
+```
